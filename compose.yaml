@@ -1,0 +1,10 @@
+version: '0.1.0'
+
+services:
+  app:
+    image: olsonadr/landing
+    container_name: landing
+    build:
+      context: .
+    ports:
+      - 3000:3000
