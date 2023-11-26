@@ -14,7 +14,7 @@ jobs:
       - name: Build Container
         run: docker compose build
       - name: Compose Up
-        run: docker compose up
+        run: docker compose up -d
       - name: Compose Down
         run: docker compose down -v
       - name: Push Container
