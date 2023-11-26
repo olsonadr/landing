@@ -118,6 +118,7 @@ const H2 = styled.h2`
 const H3 = styled(H2)`
     font-size: 1.25rem;
     color: var(--fg-text);
+    margin-bottom: 0;
 
     &.hover-on:hover {
         color: var(--fg-text-bold);
