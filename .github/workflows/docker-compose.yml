@@ -9,6 +9,7 @@ on:
 jobs:
   build-run-push:
     runs-on: ubuntu-latest
+    environment: DockerHub
     steps:
       - uses: actions/checkout@v3
       - name: Build Container
@@ -17,5 +18,7 @@ jobs:
         run: docker compose up -d
       - name: Compose Down
         run: docker compose down -v
+      - name: Docker Login
+        run: echo "${DOCKER_REGISTRY_PASS}" | docker login ${DOCKER_REGISTRY} --username ${DOCKER_REGISTRY_USER} --password-stdin
       - name: Push Container
         run: docker compose push
