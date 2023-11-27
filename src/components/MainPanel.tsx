@@ -45,7 +45,7 @@ const MainColumn = styled.div`
     align-items: center;
     text-align: center;
     @media (min-width: 550px) {
-        width: 480px;
+        width: 430px;
     }
     @media (max-width: 550px) {
         width: 80%;
@@ -74,7 +74,7 @@ const BlurredPortraitPhoto = () => {
 }
 
 const SocialGlyphRow = styled(HorizFlex)`
-    padding: 2rem 0 2rem 0;
+    padding: 0.5rem 0;
     gap: 1rem;
 `;
 
@@ -111,14 +111,13 @@ const H1 = styled.h1`
 
 const H2 = styled.h2`
     margin-bottom: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: var(--fg-text);
 `;
 
-const H3 = styled(H2)`
-    font-size: 1.25rem;
-    color: var(--fg-text);
+const LinkListItemText = styled(H2)`
     margin-bottom: 0;
+    font-size: 1rem;
 
     &.hover-on:hover {
         color: var(--fg-text-bold);
@@ -131,13 +130,13 @@ const LinkList = styled(VertFlex)`
 
 const LinkListItemS = styled.a`
     height: var(--link-button-height);
-    width: 100%;
+    width: calc(100% - (var(--link-button-padding)/2) );
     display: flex;
     align-items: center;
     border-radius: var(--border-radius);
     transition: background var(--color-speed);
     padding: var(--link-button-padding);
-    margin: 2rem;
+    margin: 0.5rem;
     background-color: var(--bg);
     cursor: pointer;
     color: var(--bg-text);
@@ -236,10 +235,10 @@ function MainPanel(props: {}) {
                     <H2>or enjoy a hosted app</H2>
                     <LinkList>
                         <LinkListItem href="https://notes.nicholasolson.dev" leftIcon={<FaFeather />} rightIcon={<ChevronIcon />}>
-                            <H3 className="hover-on">React Notes</H3>
+                            <LinkListItemText className="hover-on">React Notes</LinkListItemText>
                         </LinkListItem>
                         <LinkListItem href="https://blackboard.nicholasolson.dev" leftIcon={<FaBrain />} rightIcon={<ChevronIcon />}>
-                            <H3 className="hover-on">Blackboard AI</H3>
+                            <LinkListItemText className="hover-on">Blackboard AI</LinkListItemText>
                         </LinkListItem>
                     </LinkList>
                 </MainColumn>
