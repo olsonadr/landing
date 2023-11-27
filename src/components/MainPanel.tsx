@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import useProgressiveImg from "../effects/useProgresiveImg";
 
-import { FaGithub, FaLinkedin, FaFeather } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFeather, FaBrain } from "react-icons/fa";
 import { ReactComponent as ChevronIcon } from "../icons/chevron.svg";
 
 import headshot from "../img/headshot.jpg";
@@ -237,6 +237,9 @@ function MainPanel(props: {}) {
                     <LinkList>
                         <LinkListItem href="https://notes.nicholasolson.dev" leftIcon={<FaFeather />} rightIcon={<ChevronIcon />}>
                             <H3 className="hover-on">React Notes</H3>
+                        </LinkListItem>
+                        <LinkListItem href="https://blackboard.nicholasolson.dev" leftIcon={<FaBrain />} rightIcon={<ChevronIcon />}>
+                            <H3 className="hover-on">Blackboard AI</H3>
                         </LinkListItem>
                     </LinkList>
                 </MainColumn>
