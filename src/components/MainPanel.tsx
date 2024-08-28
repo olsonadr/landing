@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
 import useProgressiveImg from "../effects/useProgresiveImg";
 
-import { FaGithub, FaLinkedin, FaFeather, FaBrain } from "react-icons/fa";
-import { ReactComponent as ChevronIcon } from "../icons/chevron.svg";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 import headshot from "../img/headshot.jpg";
 import headshot_tiny from "../img/headshot_tiny.jpg";
@@ -21,14 +20,6 @@ const Main = styled.div`
     /* take full width */
     left: 0;
     right: 0;
-`;
-
-const VertFlex = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 `;
 
 const HorizFlex = styled.div`
@@ -115,107 +106,6 @@ const H2 = styled.h2`
     color: var(--fg-text);
 `;
 
-const LinkListItemText = styled(H2)`
-    margin-bottom: 0;
-    font-size: 1rem;
-
-    &.hover-on:hover {
-        color: var(--fg-text-bold);
-    }
-`;
-
-const LinkList = styled(VertFlex)`
-    width: 100%
-`;
-
-const LinkListItemS = styled.a`
-    height: var(--link-button-height);
-    width: calc(100% - (var(--link-button-padding)/2) );
-    display: flex;
-    align-items: center;
-    border-radius: var(--border-radius);
-    transition: background var(--color-speed);
-    padding: var(--link-button-padding);
-    margin: 0.5rem;
-    background-color: var(--bg);
-    cursor: pointer;
-    color: var(--bg-text);
-    &:hover {
-        background-color: var(--bg-bold);
-        color: var(--bg-text-bold);
-    }
-    &:hover .left-icon {
-        /* background-color: var(--bg-bolder); */
-        color: var(--fg-text-bold);
-    }
-    &:hover .hover-on {
-        color: var(--fg-text-bold);
-    }
-`;
-
-// Create styled components for the NavItem's (emotion.js)
-const IconButton = styled.button`
-    --button-size: calc(0.5 * var(--nav-height));
-    font-size: 1.5rem;
-    height: var(--button-size);
-    width: var(--button-size);
-    background: none;
-    border-radius: 50%;
-    padding: 5px;
-    margin: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    cursor: pointer;
-    &.hover-on:hover {
-        background: none;
-        filter: brightness(1.1);
-    }
-    & svg {
-        fill: var(--bg-text);
-        color: var(--bg-text);
-        width: 1.5rem;
-        height: 1.5rem;
-    }
-    &.right {
-        margin-left: auto;
-        background: none;
-        border-radius: 50%;
-    }
-    &.right-bump {
-        margin-right: 10px;
-    }
-    &.no-bg {
-        background: none;
-    }
-`;
-
-// Local LinkListItem react component
-function LinkListItem(props: {
-    leftIcon?: string | JSX.Element;
-    rightIcon?: string | JSX.Element;
-    children?: string | JSX.Element;
-    href?: string;
-}) {
-    // Return jsx for DropdownMenu to render
-    return (
-        <LinkListItemS href={props.href}>
-            {props.leftIcon ? (
-                <IconButton className="right-bump left-icon">
-                    {props.leftIcon}
-                </IconButton>
-            ) : (
-                <IconButton className="no-bg right-bump"></IconButton>
-            )}
-            {props.children}
-            {props.rightIcon && (
-                <IconButton className="right right-icon">{props.rightIcon}</IconButton>
-            )}
-        </LinkListItemS>
-    );
-}
-
 // Exported MainPanel react component
 function MainPanel(props: {}) {
     // Return jsx output for this component
@@ -232,15 +122,6 @@ function MainPanel(props: {}) {
                         <a href="https://github.com/olsonadr"><GithubGlyph /></a>
                         <a href="https://www.linkedin.com/in/olson-nick/"><LinkedinGlyph /></a>
                     </SocialGlyphRow>
-                    <H2>or enjoy a hosted app</H2>
-                    <LinkList>
-                        <LinkListItem href="https://notes.nicholasolson.dev" leftIcon={<FaFeather />} rightIcon={<ChevronIcon />}>
-                            <LinkListItemText className="hover-on">React Notes</LinkListItemText>
-                        </LinkListItem>
-                        <LinkListItem href="https://blackboard.nicholasolson.dev" leftIcon={<FaBrain />} rightIcon={<ChevronIcon />}>
-                            <LinkListItemText className="hover-on">Blackboard AI</LinkListItemText>
-                        </LinkListItem>
-                    </LinkList>
                 </MainColumn>
             </Main>
         </>
