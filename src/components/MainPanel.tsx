@@ -232,7 +232,7 @@ function MainPanel(props: {}) {
                         <a href="https://github.com/olsonadr"><GithubGlyph /></a>
                         <a href="https://www.linkedin.com/in/olson-nick/"><LinkedinGlyph /></a>
                     </SocialGlyphRow>
-                    <H2>or enjoy a hosted app</H2>
+                    {/* <H2>or enjoy a hosted app</H2>
                     <LinkList>
                         <LinkListItem href="https://notes.nicholasolson.dev" leftIcon={<FaFeather />} rightIcon={<ChevronIcon />}>
                             <LinkListItemText className="hover-on">React Notes</LinkListItemText>
@@ -240,7 +240,7 @@ function MainPanel(props: {}) {
                         <LinkListItem href="https://blackboard.nicholasolson.dev" leftIcon={<FaBrain />} rightIcon={<ChevronIcon />}>
                             <LinkListItemText className="hover-on">Blackboard AI</LinkListItemText>
                         </LinkListItem>
-                    </LinkList>
+                    </LinkList> */}
                 </MainColumn>
             </Main>
         </>
